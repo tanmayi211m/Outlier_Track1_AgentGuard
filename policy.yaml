@@ -1,0 +1,12 @@
+mode: enforce
+tools:
+  list_emails: {allowed: true, risk: low}
+  read_email: {allowed: true, risk: low}
+  search_emails: {allowed: true, risk: medium}
+  send_email: {allowed: false, risk: high, approval_required: true}
+  delete_email: {allowed: false, risk: critical, approval_required: true}
+limits:
+  max_external_emails_per_session: 0
+prompt_injection:
+  enabled: true
+  block_on_detection: false
